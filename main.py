@@ -54,6 +54,13 @@ def zadanie_9():
     exam_st_date = (11, 12, 2014)
     print("The examination will start from: %i %i %i" %exam_st_date)
 
+def zadanie_10():
+    x = int(input("Podaj liczbe: "))
+    x1 = int("%s" % x)
+    x2 = int("%s%s" % (x, x))
+    x3 = int("%s%s%s" % (x, x, x))
+    print(x1 + x2 + x3)
+
 ### MAIN ###
 # zadanie_1()
 # zadanie_2()
@@ -64,3 +71,4 @@ def zadanie_9():
 # zadanie_7()
 # zadanie_8()
 # zadanie_9()
+zadanie_10()
