@@ -6,6 +6,10 @@ import sys
 import datetime
 # math - zadanie 4 - importuje rzeczy potrzebne do obliczen matematycznych (np. pi, sqrt)
 from math import *
+# calendar - dodaje kalendarz
+import calendar
+# importuje daty
+from datetime import date
 
 def zadanie_1():
     print("Twinkle, twinkle, little star,")
@@ -61,6 +65,30 @@ def zadanie_10():
     x3 = int("%s%s%s" % (x, x, x))
     print(x1 + x2 + x3)
 
+def zadanie_11():
+    # wyswietla docstring funkcji podanej jako argument
+    print(abs.__doc__)
+
+def zadanie_12():
+    rok = int(input("Podaj rok: "))
+    miesiac = int(input("Podaj miesiac: "))
+    print(calendar.month(rok, miesiac))
+
+def zadanie_13():
+    print("""
+    a string that you "don't" have to escape
+    This
+    is a  ....... multi-line
+    heredoc string --------> example
+    """)
+
+def zadanie_14():
+    f_date = date(2014, 7, 2)
+    l_date = date(2014, 7, 11)
+    delta = l_date - f_date
+    print(delta.days)
+
+
 ### MAIN ###
 # zadanie_1()
 # zadanie_2()
@@ -71,4 +99,8 @@ def zadanie_10():
 # zadanie_7()
 # zadanie_8()
 # zadanie_9()
-zadanie_10()
+# zadanie_10()
+# zadanie_11()
+# zadanie_12()
+# zadanie_13()
+# zadanie_14()
