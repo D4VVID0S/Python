@@ -1,23 +1,44 @@
-# contacts = [
-#     ('James', 42),
-#     ('Amy', 24),
-#     ('John', 31),
-#     ('Amanda', 63),
-#     ('Bob', 18)
-# ]
+### Przesukanie dictionary po kluczu ###
+contacts = [
+    ('James', 42),
+    ('Amy', 24),
+    ('John', 31),
+    ('Amanda', 63),
+    ('Bob', 18)
+]
+name = input()
+for x in contacts:
+    if name in x:
+        print(str(x[0]) + " is " + str(x[1]))
+        # print(str(x[0])) ---> wydrukuj tuple od x o indeksie [0]
+        # każdy tuple ma dwie wartości czyli indeks od 0 do 1
+        break
+else:
+    print('Not Found')
 
-# name = input()
-
-# for x in contacts:
-#     if name in x:
-#         print(str(x[0]) + " is " + str(x[1]))
-#         # print(str(x[0])) ---> wydrukuj tuple od x o indeksie [0]
-#         # każdy tuple ma dwie wartości czyli indeks od 0 do 1
-#         break
-
-# else:
-#     print('Not Found')
-
+### Zmienne z gwiazdka biora tyle liczb z zasiegu ile to mozliwe i tworza z tego liste ###
 a, b, c, d, *e, f, g = range(20)
 print(range(20))
 print(len(e))
+
+### Sprawdzanie czy liczba jest pierwsza za pomoca generatora skonczonego ###
+def isPrime(x):
+    if x < 2:
+        return False
+    elif x == 2:
+        return True  
+    for n in range(2, x):
+        if x % n ==0:
+            return False
+    return True
+
+def primeGenerator(a, b):
+    #your code goes here
+    for number in range(a, b):
+        if isPrime(number):
+            yield number
+    
+f = int(input())
+t = int(input())
+
+print(list(primeGenerator(f, t)))
