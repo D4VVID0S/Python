@@ -33,7 +33,6 @@ def isPrime(x):
     return True
 
 def primeGenerator(a, b):
-    #your code goes here
     for number in range(a, b):
         if isPrime(number):
             yield number
@@ -42,3 +41,25 @@ f = int(input())
 t = int(input())
 
 print(list(primeGenerator(f, t)))
+
+# Classes
+class Shape: 
+    def __init__(self, w, h):
+        self.width = w
+        self.height = h
+
+    def area(self):
+        print(self.width*self.height)
+
+class Rectangle(Shape):
+    #your code goes here
+    def perimeter(self):
+        print(2*(self.width+self.height))
+    
+
+w = int(input())
+h = int(input())
+
+r = Rectangle(w, h)
+r.area()
+r.perimeter()
