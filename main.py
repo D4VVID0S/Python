@@ -88,6 +88,34 @@ def zadanie_14():
     delta = l_date - f_date
     print(delta.days)
 
+def zadanie_15():
+    radius = 6
+    print(4/3*pi*radius**3)
+
+def zadanie_16():
+    num = int(input())
+    if num <= 17:
+        print(print(abs((num-17)*2)))
+    else:
+        print(num - 17)
+
+def z17():
+    num = int(input())
+    if (1000 - num) <= 100 or (2000 - num) <= 100:
+        print(True)
+    else:
+        print(False)
+
+def z18():
+    a = int(input())
+    b = int(input())
+    c = int(input())
+    sum = a + b + c
+
+    if a == b == c:
+        print(sum * 3)
+    else:
+        print(sum)
 
 ### MAIN ###
 # zadanie_1()
@@ -104,3 +132,7 @@ def zadanie_14():
 # zadanie_12()
 # zadanie_13()
 # zadanie_14()
+# zadanie_15()
+# zadanie_16()
+# z17()
+z18()
