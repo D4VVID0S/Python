@@ -1,6 +1,7 @@
 # https://www.w3resource.com/python-exercises/python-basic-exercises.php
 
 # sys - zadanie 2 - dodaje informacje o wersji pythona
+from re import I, X
 import sys
 # datetime - zadanie 3 - dodaje czas
 import datetime
@@ -117,6 +118,114 @@ def z18():
     else:
         print(sum)
 
+def z19():
+    str = input()
+    def new_string(str):
+        if len(str) >= 2 and str[:2] == "Is":
+            return str
+        return "Is" + str
+    print(new_string(str))
+
+def z20():
+    str = input("Podaj stringa: ")
+    n = int(input("Podaj ile razy ma sie powtorzyc string: "))
+    print(str * n)
+
+def z21():
+    def is_even(x):
+        if x % 2 == 0:
+            return "The given number is even."
+        else:
+            return "The given number is odd."
+    num = int(input("Give a number to check if it is even or odd: "))
+    print(is_even(num))
+
+def z22():
+    nums = input("Podaj iles licz. Kazda oddzielna liczba po spacji: ")
+    nums = nums.split()
+    x = input("Podaj liczbe do sprawdzenia czy jest w liscie: ")
+    print(nums.count(x))
+    
+def z23():
+    str = input("Podaj stringa: ")
+    n = int(input("Podaj ile razy potworzyc pierwsze dwie litery stringa: "))
+    print(str[:2] * n)
+
+def z24():
+    def isVowel(letter):
+        if letter in vowels:
+            return "The given letter is a vowel."
+        else:
+            return "The given letter is not a vowel."
+
+    vowels = 'aeiou'
+    ch = input("Give a letter to check if it is a vowel: ")
+    print(isVowel(ch))
+
+def z25():
+    def str_to_int(lista):
+        for i in range(len(lista)):
+            lista[i] = int(lista[i])
+    
+    x = int(input("Podaj liczbe: "))
+    nums = input("Podaj liste liczb. Kazda liczba oddzielona spacja: ")
+    nums = nums.split()
+    str_to_int(nums)
+    print(x in nums)  
+
+def z26():
+    def str_to_int(lista):
+        for i in range(len(lista)):
+            lista[i] = int(lista[i])
+
+    def histogram(letter, x):
+        for i in range(len(x)):
+            print(letter * x[i])
+
+    znak = input("Podaj znak do histogramu: ")
+    n = input("Podaj liste licz oddzielone spacja: ")
+    n = n.split()
+    str_to_int(n)
+    histogram(znak, n)
+
+def z27():
+    def konkatenacja(nums):
+        result = ''
+        for i in nums:
+            result += str(i)
+        return result
+
+    nums = input("Podaj liste liczb kazda oddzielona spacja: ")
+    nums = nums.split()
+    print(konkatenacja(nums))
+
+def z28():
+    numbers = [    
+    386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 615, 953, 345, 
+    399, 162, 758, 219, 918, 237, 412, 566, 826, 248, 866, 950, 626, 949, 687, 217, 
+    815, 67, 104, 58, 512, 24, 892, 894, 767, 553, 81, 379, 843, 831, 445, 742, 717, 
+    958,743, 527
+    ]
+
+    for i in numbers:
+        if i == 237:
+            print(i)
+            break
+        elif i % 2 ==0:
+            print(i)
+
+def z29():
+    color_list_1 = set(["White", "Black", "Red"])
+    color_list_2 = set(["Red", "Green"])
+
+    print(color_list_1 - color_list_2)
+
+def z30():
+    podstawa = float(input("Podaj podstawe trojkata:"))
+    wysokosc = float(input("Podaj wysokosc trojkata:"))
+
+    print(podstawa * wysokosc / 2)
+
 ### MAIN ###
 # zadanie_1()
 # zadanie_2()
@@ -135,4 +244,16 @@ def z18():
 # zadanie_15()
 # zadanie_16()
 # z17()
-z18()
+# z18()
+# z19()
+# z20()
+# z21()
+# z22()
+# z23()
+# z24()
+# z25()
+# z26()
+# z27()
+# z28()
+# z29()
+# z30()
