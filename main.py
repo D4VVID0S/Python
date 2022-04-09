@@ -1,6 +1,7 @@
 # https://www.w3resource.com/python-exercises/python-basic-exercises.php
 
 # sys - zadanie 2 - dodaje informacje o wersji pythona
+from hashlib import new
 from re import I, X
 import sys
 # datetime - zadanie 3 - dodaje czas
@@ -226,6 +227,84 @@ def z30():
 
     print(podstawa * wysokosc / 2)
 
+def z31():
+    print("Obliczanie najwiekszego wspolnego dzielnika")
+    x = int(input("Podaj x: "))
+    y = int(input("Podaj y:"))
+
+    def nwd(a, b):
+        while b:
+            temp = a
+            a = b
+            b = temp%b
+        return a
+    print(nwd(x, y)) 
+
+def z32():
+    def nwd(a, b):
+        while b:
+            temp = a
+            a = b
+            b = temp%b
+        return a
+
+    def nww(a, b):
+        return a * b // nwd(a, b)
+
+    print("Obliczanie najwiekszego wspolnego dzielnika")
+    x = int(input("Podaj x: "))
+    y = int(input("Podaj y:"))
+    print(nww(x, y)) 
+
+def z33():
+    x = int(input("Podaj x:"))
+    y = int(input("podaj y:"))
+    z = int(input("Podaj z:"))
+
+    if x == y or x == z or y == z:
+        print(0)
+    else:
+        print(x + y + z)
+
+def z34():
+    a = int(input("Podaj a: "))
+    b = int(input("Podaj b: "))
+    
+    if a + b in range(15, 21):
+        print("Suma jest w przedziale (15, 20) zatem rowna sie 20.")
+    else:
+        print(a + b)
+
+def z35():
+    a = int(input("Podaj a: "))
+    b = int(input("Podaj b: "))
+
+    if a == b or a + b == 5 or a - b == 5 or b - a == 5:
+        print(True)
+    else:
+        print(False)
+
+def z36():
+    def if_intiger(a, b):
+        if isinstance(a, int) and isinstance(b, int):
+            return a + b
+        else:
+            return "Input musi byc intigerem!"
+
+    print(if_intiger(10, 20))
+    print(if_intiger(10, 20.23))
+    print(if_intiger('5', 6))
+    print(if_intiger('5', '6'))
+
+def z37():
+    def personal_details(name, age, adres):
+        print("Name: {}\nAge: {}\nAddress: {}".format(name, age, adres))
+    name = input("Podaj imie: ")
+    age = input("Podaj wiek: ")
+    adres = input("Podaj adres: ")
+    personal_details(name, age, adres)
+
+
 ### MAIN ###
 # zadanie_1()
 # zadanie_2()
@@ -257,3 +336,10 @@ def z30():
 # z28()
 # z29()
 # z30()
+# z31()
+# z32()
+# z33()
+# z34()
+# z35()
+# z36()
+z37()
