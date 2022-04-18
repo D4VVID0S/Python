@@ -1,6 +1,7 @@
 # https://www.w3resource.com/python-exercises/python-basic-exercises.php
 
 # sys - zadanie 2 - dodaje informacje o wersji pythona
+from distutils.log import error
 from hashlib import new
 from re import I, X
 import sys
@@ -12,6 +13,8 @@ from math import *
 import calendar
 # importuje daty
 from datetime import date
+# funkcja os.path.isfile/os.path.exists by sprawdzić czy plik istnieje/jest dostepny
+import os.path
 
 def zadanie_1():
     print("Twinkle, twinkle, little star,")
@@ -304,6 +307,39 @@ def z37():
     adres = input("Podaj adres: ")
     personal_details(name, age, adres)
 
+def z38():
+    while True:
+        try:
+            x = float(input("Podaj X:"))
+            y = float(input("Podaj Y:"))
+            res = (x+y)**2
+            print(res)
+            break
+        except Exception as e:
+            # error_string = str(e)
+            # print(error_string)
+            print("Something went wrong.")
+
+def z40():
+    while True:
+        try:
+            p1 = [int(input("Podaj X1:")), int(input("Podaj Y1:"))]
+            p2 = [int(input("Podaj X2:")), int(input("Podaj Y2:"))]
+
+            res = [p1[0] - p2[0], p1[1] - p2[1]]
+            print(res)
+            break
+        except Exception as e:
+            # error_string = str(e)
+            # print(error_string)
+            print("Something went wrong.")
+
+def z41():
+    print(os.path.isfile('main.txt'))
+    print(os.path.isfile('main.py'))
+    print(os.path.exists('main.txt'))
+    print(os.path.exists('main.py'))
+
 
 ### MAIN ###
 # zadanie_1()
@@ -342,4 +378,7 @@ def z37():
 # z34()
 # z35()
 # z36()
-z37()
+# z37()
+# z38()
+# z40()
+z41()
